@@ -1,0 +1,26 @@
+.slide_img{
+    width: 100%;
+    height: 500px;
+    
+
+}
+h2{
+    color: #1e1e1e;
+    font-family: "Aften Screen Regular", "Aften Screen Regular", sans-serif;
+     font-style: normal;
+    font-weight: normal; 
+    line-height: 1.4;
+    position: absolute;
+    top: 100px;
+    left:500px ;
+
+    
+    
+}
+ 
+.slider{
+    margin-top:-400PX;
+} 
+body{
+    background-color: whitesmoke;
+} 

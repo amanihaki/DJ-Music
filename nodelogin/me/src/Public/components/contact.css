@@ -1,0 +1,58 @@
+.contact-component .image{
+    width:200px;
+    left: 65%;
+   position: absolute;
+   top:200px;
+ 
+}
+.contact-component .container{
+    margin-top: -470px;
+    margin-bottom: 130px;
+    margin-left: 20px;
+}  
+
+
+.contact-component .aLink{
+    text-decoration: none;
+    color: rgb(0,0,0);
+     font-size: 16px; 
+     
+} 
+
+.contact-component #myimage{
+  animation: image 2s backwards;
+}
+.contact-component .contact_me{
+  color:rgb(75, 25, 25)
+}
+
+@keyframes image {
+  from{
+    width:150px;
+  }
+  to{
+    width:200px;
+  }
+} 
+ 
+.contact-component #p_1{
+  animation: moving 1s linear;
+ 
+} 
+.contact-component #p_2{
+  animation: moving 2s linear;
+  
+}
+.contact-component #p_3{
+  animation: moving 3s linear;
+  
+}
+
+@keyframes moving {
+ 0%{
+   top:0px; left:20px; opacity: 0.2;
+ }
+ 100%{
+   top:0px; left: 100px; opacity: 1;
+ }
+} 
