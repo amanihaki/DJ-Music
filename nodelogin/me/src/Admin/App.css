@@ -26,4 +26,9 @@
     cursor: pointer;
     font-weight: bold;
     color: #ffffff;
+} 
+
+    .header_admin{
+    height: 90px;
+    background-color: #4d4d4d;
 }

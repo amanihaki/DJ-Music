@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from './Header_admin';
 import Admin from './Admin'
-import Gallery from '../Public/components/gallery';
+import Gallery from './Gallery_admin';
+
+
+
+
 class Control extends Component {
   render () {
     return (
@@ -11,7 +14,7 @@ class Control extends Component {
       <Header/>
       {/* <Admin/> */}
       <Route path="/admin/events" component={Admin} />
-      <Route path="/admin/gallary" component={Gallery}/>
+      <Route path="/admin/gallery" component={Gallery}/>
         
       </div>
     );
