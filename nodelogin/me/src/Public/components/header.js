@@ -17,17 +17,17 @@ class Header extends Component{
 
                         <div class="logo">
 
-                          <NavLink to="/">  <img className="logo" activeClassName="activeStyle" src={logo}/></NavLink>
+                          <NavLink to="/">  <img className="logo" src={logo}/></NavLink>
 
                              
                         </div>
 
                         <div class="menu"> 
                               <ul>
-                                  <li>  <NavLink activeClassName="active" to="/gallery">Gallery</NavLink> </li>
-                                    <li> <NavLink activeClassName="active" to="/events">EVENTS</NavLink></li>
-                                    <li> <NavLink activeClassName="active" to="/music">MUSIC</NavLink></li>
-                                    <li><NavLink activeClassName="active" to="/contact">CONTACT</NavLink></li>
+                                  <li>  <NavLink   activeStyle={{color: "gray",textDecoration:"none" }} to="/gallery">Gallery</NavLink> </li>
+                                    <li> <NavLink   activeStyle={{color: "gray", textDecoration:"none"}} to="/events">EVENTS</NavLink></li>
+                                    <li> <NavLink   activeStyle={{color: "gray", textDecoration:"none" }} to="/music">MUSIC</NavLink></li>
+                                    <li><NavLink   activeStyle={{ color: "gray",textDecoration:"none"}}to="/contact">CONTACT</NavLink></li>
                               </ul>
                            
                         </div>

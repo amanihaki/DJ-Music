@@ -54,7 +54,8 @@ nav ul li a {
     font-size: 22px;
     /*font-weight: 800;
    */
-   font-family: "Aften Screen Regular", "Aften Screen Regular", sans-serif;
+   /* font-family: "Aften Screen Regular", "Aften Screen Regular", sans-serif; */
+   font-family: 'Curier New', monospace;
     font-style: normal;
    font-weight: normal; 
    line-height: 1.4;
@@ -95,8 +96,8 @@ nav ul li a:hover{
           left: -10%;
         }
       } 
-      .active{
-        color: #5e5656;
+      .activeStyle{
+      
         text-decoration: none;
       }
            

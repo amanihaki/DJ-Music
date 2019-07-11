@@ -1,0 +1,51 @@
+.music_container{
+    border:1px solid black;
+    background: blanchedalmond;
+    height: 400px;
+    width:400px;
+    box-shadow: 4px 4px 3px gray;
+    text-align: center;
+    margin: -400px auto;
+    background:black;
+    /* min-width: 540px;
+    min-height: 300px; */
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 3%;
+    font-family: 'Curier New', monospace;
+    color: #eee;
+    text-transform: uppercase;
+    overflow: scroll;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    box-shadow: 
+      0 1px 2px rgba(0,0,0,0.1),
+      0 0 0 2px rgba(93, 102, 86, 0.5);
+    animation: pulse 2s ease infinite;
+  }
+  @keyframes pulse {
+    50% {
+      box-shadow:
+        0 1px 5px rgba(0,0,0,0.1),
+        0 0 0 8px rgba(93, 102, 86, 0.5);
+    }
+  }
+#search_bar{
+     width: 100%; 
+    /* border-top-style: none;
+    border-right-style: none; 
+     border-left-style: none; */
+
+    /* position: fixed;   */
+    z-index: 2;
+    height: 50px; 
+    
+   
+} 
+
+.control-audio{
+    width: 100%;
+    height: 40px;
+  
+}

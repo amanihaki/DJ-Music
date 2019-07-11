@@ -1,77 +1,54 @@
 import React,{Component} from "react";
-//import Header from "./header";
+import Header from "./header";
+
 //import { isTemplateLiteral } from "@babel/types";
 //import MusicPlayer from 'react-responsive-music-player';
 //import SearchExample from "./search"
 //import ReactAudioPlayer from 'react-audio-player';
-// "./music.css";
+import"./music.css";
 
 // const movies =  [
 //   { title: "X", url: 'http://localhost:3000/events/1.mp3'},
 //   { title: "XX", url:'http://localhost:3000/events/2.mp3'},
 //   { title: "XXX", url:'http://localhost:3000/events/3.mp3'},
-
-
-// ]
-
-
 const movies = [
   {
-    title: 'Mad Max: Fury Road',
+    title: 'Music1',
     para : 'Music1',
     poster: 'http://localhost:3000/events/1.mp3'
   },
   {
-    title: 'The Hunger Games: Mockingjay Part 1',
+    title: 'Music2',
     para : 'Music2',
     poster: 'http://localhost:3000/events/1.mp3'
   },
   {
-    title: 'Jurassic World',
+    title: 'Music3',
     para : 'Music3',
     poster: 'http://localhost:3000/events/1.mp3'
   },
   {
-    title: 'Everest',
+    title: 'Music4',
     para : 'Music4',
     poster: 'http://localhost:3000/events/1.mp3'
   },
   {
-    title: 'Insurgent',
+    title: 'Music5',
     para : 'Music5',
      poster: 'http://localhost:3000/events/1.mp3'
   },
   {
-    title: 'Sicario',
+    title: 'Music6',
     para : 'Music6',
      poster: 'http://localhost:3000/events/1.mp3'
   }
 ];
 const Movie = (prop) => (
   <div>
-    <div>
-     <p> {prop.movie.para}</p>
-     <audio controls src={prop.movie.poster} type="audio/mpeg"/>
+    <div >
+     <p> {prop.movie.para}</p> <audio className="control-audio" controls src={prop.movie.poster} type="audio/mpeg"/>
     </div>
-    <div class="music-player-container is-playing">
-
-<div class="music-player">
-  <div class="player-content-container">
-    <h1 class="artist-name">Incubus</h1>
-    <h2 class="album-title">Make Yourself</h2>
-    <h3 class="song-title">"Stellar"</h3>
-    <div class="music-player-controls">
-      <div class="control-back"></div>
-      <div class="control-play"></div>
-      <div class="control-forwards"></div>
-    </div>
-  </div></div>
-<div class="album">
-  <div class="album-art"></div>
-  <div class="vinyl"></div>
-</div>
-
-</div>
+    
 </div>
 );
 
@@ -80,23 +57,24 @@ const Movie = (prop) => (
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.updateSearch = this.updateSearch.bind(this);
+    // this.updateSearch = this.updateSearch.bind(this);
   }
-  updateSearch(newSearch) {
+  updateSearch=(newSearch)=> {
     this.props.updateSearch(newSearch)
   }
 
   render() {
     return(
-      <div>
-        <div id="search-input">
-          <input type="search" 
+      <div >
+        <div  id="search-input">
+          <input id="search_bar" type="search" 
             placeholder="Find Music..."
             value={this.props.search} 
             onChange={this.updateSearch}
           />
-          <i className="fa fa-search"></i>
+          {/* <i className="fa fa-search"></i> */}
         </div>
+      
         
       </div>
     )
@@ -125,7 +103,7 @@ class Main extends React.Component {
   render() {
     const { search } = this.state;
     return(
-      <main>
+      <main class="music_container">
         
         <Form search={search} updateSearch={this.updateSearch}/>
         
@@ -144,7 +122,7 @@ class Main extends React.Component {
 }
 
 
-class App extends React.Component {
+class Musican extends React.Component {
   constructor(props) {
     super(props);
      this.state = {
@@ -155,7 +133,7 @@ class App extends React.Component {
     const {movies} = this.state;
     return(
       <div>
-      {/* <Header/> */}
+      <Header/>
       <Main movies={movies}/>
       </div>
     )
@@ -166,4 +144,4 @@ class App extends React.Component {
 
 
 
-export default App;
+export default Musican;

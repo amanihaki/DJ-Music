@@ -6,7 +6,7 @@ import Form from '../Form';
 import Axios from 'axios';
 
 class Gallery extends React.Component {
-<<<<<<< HEAD
+
     state = {
         events: []
     };
@@ -32,15 +32,8 @@ class Gallery extends React.Component {
     handleSubmit = event => {
         this.setState({events: [...this.state.events, event]});
     }
-=======
-    render() {
-        return (
-            <div>
-                {/* <Header /> */}
-                <p>this is gallery page</p>
-wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
->>>>>>> b82595f8a587b1d5cb159ddd1ebccb0ba0ac72e1
 
+    
     render() {
         const { events } = this.state;
         
@@ -60,23 +53,7 @@ wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
     }
 }
 
-<<<<<<< HEAD
+
 
 export default withRouter(Gallery);
 
-
-
-
-
-
-/* import React, { Component } from 'react';
-import Table from '../Table';
-import Form from '../Form';
-import Axios from 'axios';
-
-class Admin extends Component {
-  
-export default Admin; */
-=======
-export default withRouter(Gallery);
->>>>>>> b82595f8a587b1d5cb159ddd1ebccb0ba0ac72e1

@@ -99,21 +99,21 @@ class Form extends Component {
 
         return (
             <form encType="multipart/form-data">
-                <label>title</label>
+                <label>Title</label>
                 <input
                     type="text"
                     name="title"
                     id="title_id"
                     
                     onChange={this.handleTitleChange} />
-                     <label>date</label>
+                     <label>Date</label>
                     <input
                     type="date"
                     name="title"
                     id="title_id"
                     
                     onChange={this.handleTitleChange} />
-                <label>description</label>
+                <label>Description</label>
                 <input
                     type="text"
                     name="description"

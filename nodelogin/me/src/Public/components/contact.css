@@ -6,9 +6,11 @@
  
 }
 .contact-component .container{
-    margin-top: -470px;
+    margin-top: -477px;
     margin-bottom: 130px;
-    margin-left: 20px;
+    margin-left: 5px;
+    color: black;
+    padding:-15px;
 }  
 
 
@@ -34,18 +36,23 @@
     width:200px;
   }
 } 
- 
+.move{
+  margin-top: -8px;
+}
+
 .contact-component #p_1{
   animation: moving 1s linear;
+
+  
  
 } 
 .contact-component #p_2{
   animation: moving 2s linear;
-  
+  margin-top:-17px;
 }
 .contact-component #p_3{
   animation: moving 3s linear;
-  
+  margin-top:-17px;
 }
 
 @keyframes moving {

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, } from "react-router-dom";
 import Gallery from "./components/gallery";
 import Contact from "./components/Contact";
 import Events from "./components/Events";
-import App from "./components/Music";
+import Musican from "./components/Music";
 import Header from "./components/header";
 
 
@@ -21,7 +21,7 @@ function PublicApp() {
                 <Route path='/gallery' component={Gallery} />
                 <Route path='/events' component={Events} />
                 <Route path='/contact' component={Contact} />
-                <Route path='/music' component={App} />
+                <Route path='/music' component={Musican} />
 
 
 
