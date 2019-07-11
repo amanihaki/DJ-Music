@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import Header from "./header";
+//import Header from "./header";
 //import { isTemplateLiteral } from "@babel/types";
 //import MusicPlayer from 'react-responsive-music-player';
 //import SearchExample from "./search"
@@ -155,7 +155,7 @@ class App extends React.Component {
     const {movies} = this.state;
     return(
       <div>
-      <Header/>
+      {/* <Header/> */}
       <Main movies={movies}/>
       </div>
     )

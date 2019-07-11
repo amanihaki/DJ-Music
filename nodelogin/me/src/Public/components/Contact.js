@@ -2,7 +2,7 @@ import React from "react";
 import "./contact.css";
 import lmage from "./img/logo.png"
 import Footer from "./footer";
-import Header from "./header";
+//import Header from "./header";
 
 
 
@@ -18,7 +18,7 @@ class Contact extends React.Component {
 
 
             <div className="contact-component">
-                <Header/>
+                {/* <Header/> */}
                 <img className="image" src={lmage} id="myimage"/>
                 <div className="container" id="min">
                              <div>

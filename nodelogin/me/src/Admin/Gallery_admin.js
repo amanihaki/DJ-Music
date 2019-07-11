@@ -2,13 +2,13 @@ import React from 'react';
 import Header from './Header_admin';
 import { withRouter } from 'react-router';
 
-class Gallrey extends React.Component {
+class Gallery extends React.Component {
     render() {
         return (
             <div>
                 {/* <Header /> */}
                 <p>this is gallery page</p>
-
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
 
             </div>
 
@@ -16,4 +16,4 @@ class Gallrey extends React.Component {
     }
 }
 
-export default withRouter(Gallrey);
+export default withRouter(Gallery);
