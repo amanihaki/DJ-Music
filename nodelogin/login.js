@@ -25,7 +25,7 @@ var upload = multer ({storage: storage});
 /* var upload = upload.single('selectedFile'); */
 /* let db = new sqlite3.Database(':memory:'); */
 let db = new sqlite3.Database (
-  '/home/myuser/Desktop/nodelogin/nodelogin.db',
+  './nodelogin.db',
   err => {
     if (err) {
       return console.error (err.message);
