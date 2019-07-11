@@ -6,7 +6,7 @@ import "./footer.css";
 class Footer extends Component{
     render(){
         return(
-      <div className="foot">
+      <div className="footer">
           <footer>
               <h4>© Copyright ©2019 </h4>
             {/* <h4>SoundCloud<span>/</span>CopanyName</h4> */}

@@ -15,7 +15,7 @@ function PublicApp() {
 
         <Router>
             <div>
-                <Header /> 
+                <Header />
             
                 <Route path='/' exact component={Home} />
                 <Route path='/gallery' component={Gallery} />

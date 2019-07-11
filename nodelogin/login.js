@@ -26,10 +26,12 @@ var upload = multer ({storage: storage});
 /* let db = new sqlite3.Database(':memory:'); */
 let db = new sqlite3.Database (
 
+
   
 
   '/home/myuser/Desktop/backend/nodelogin/nodelogin.db',
   
+
   err => {
     if (err) {
       return console.error (err.message);
@@ -134,6 +136,11 @@ app.get ('/event', function (request, response) {
 }
 );
 
+
+
+
+
+
 app.get ('/gallery', function (request, response) {
  
   let event_sql = 'SELECT * FROM event_gallary WHERE `usage(E,G,B)`="G"';
@@ -157,7 +164,26 @@ app.get ('/gallery', function (request, response) {
 );
 
 
+app.get ('/music', function (request, response) {
+ 
+  let event_sql = 'SELECT * FROM music';
+  db.all (event_sql, function (error, row) {
+    if (error) {
+      response.send (error.message);
+    } else {
+      /* 	response.sendFile('control.html', {root: __dirname });  */
+      response.send (row);
+      /* response.send(row); */
+      /* 	console.log("it's me stupid response",response); */
+    }
 
+    /* else {
+					response.send('Please login to view this page!');
+				}
+				  */
+  });
+}
+);
 
 /* app.get ('/gallery', function (requests, response) {
 	
@@ -212,6 +238,82 @@ app.post ('/insert', upload.single ('selectedFile'), function (
     });
   }
 });
+
+
+app.post ('/insertgalary', upload.single ('selectedFile'), function (
+  requests,
+  response
+) {
+  const title = requests.body.title;
+  const description = requests.body.description;
+  const date = requests.body.date;
+  const file_N = requests.file.filename;
+  console.log ('Insert ', date);
+  console.log ('Insert ', title);
+  console.log ('Insert ', description);
+  console.log ('Insert ', file_N);
+
+  if (!file_N) {
+    console.log ('upload image please ');
+    console.log (title, description);
+  } else {
+    console.log('Run query');
+    let event_sql =
+      'INSERT INTO event_gallary (title,description, image_path, date, `usage(E,G,B)`) VALUES (?, ?, ?, ?,?)';
+
+    db.run (event_sql, [title, description, file_N, date, 'G'], function (
+      error,
+      row
+    ) {
+      if (error) {
+        response.send ('Please login to view this page!');
+        return console.error ('here', error.message);
+      } else {
+        response.send ('data inserted into database');
+        console.log (this);
+        // row.forEach(row => console.log(row.title, row.description));
+      }
+    });
+  }
+});
+
+app.post ('/insertMusic', upload.single ('selectedFile'), function (
+  requests,
+  response
+) {
+  const name= requests.body.name;
+ 
+  const music_N = requests.file.filename;
+ 
+  console.log (name, music_N);
+  if (!music_N) {
+    console.log ('upload image please ');
+   
+  } else {
+    console.log('Run query');
+    let event_sql =
+      'INSERT INTO music (song_name,song_path) VALUES (?, ?)';
+
+    db.run (event_sql, [name, music_N], function (
+      error,
+      row
+    ) {
+      if (error) {
+        console.log (name, music_N);
+        response.send ('Please login to view this page!');
+        return console.error ('here the wrong', error.message);
+      } else {
+        console.log (name, music_N);
+        response.send ('data inserted into database');
+        console.log (this);
+        // row.forEach(row => console.log(row.title, row.description));
+      }
+    });
+  }
+});
+
+
+
 
 
 app.post ('/delete', function (requests, response) {

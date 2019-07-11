@@ -1,14 +1,9 @@
 import React from "react";
-//import Header from "./header";
-
+import Header from "./header";
+import Fade from 'react-reveal/Fade';
+import './Events.css';
 import Footer from './footer';
 import "./gallery.css"
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import Lightbox from "react-image-lightbox"; 
-
-
-
-
 
 class Gallery extends React.Component {
   constructor (props) {
@@ -16,10 +11,7 @@ class Gallery extends React.Component {
     this.state = {
       title: '',
       description: '',
-      images: [ ],
-      photoIndex: 0,
-      isOpen: false,
-     
+      image: '',
     };
   }
   async componentDidMount (e) {
@@ -35,11 +27,10 @@ class Gallery extends React.Component {
     }
   }
 
-
   render () {
     return (
       <div>
-
+<Header/>
         {this.state.gallary_img&& this.state.gallary_img.map ((event, index) => (
           
             <div key={index}>
@@ -47,15 +38,15 @@ class Gallery extends React.Component {
                 <img
                   className="imgE1"
                   src={`http://localhost:4000/${event.image_path}`}
-                  alt="mee" style={{width:"300px"}} 
-                 
+                  alt="mee" style={{width:"300px"}}
                 />
-              
+
+                <Fade left cascade>
                   <div id="pE4">
                     <h3 className="event_title">{event.title}</h3>
                     <p className="paragraph"> {event.description}</p>
                   </div>
-               
+                </Fade>
               </div>
             </div>
         
@@ -66,5 +57,4 @@ class Gallery extends React.Component {
     );
   }
 }
-  
 export default Gallery;

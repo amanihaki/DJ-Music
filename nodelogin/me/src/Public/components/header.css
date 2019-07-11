@@ -32,7 +32,6 @@ nav ul {
     margin: 0;
     padding-right: 40px;
     transition: 1s;
-    text-decoration: none;
 }
 
 nav.black ul {
@@ -49,7 +48,7 @@ color:black ;
 
 nav ul li a {
   position: relative;
-  text-decoration: none;
+    text-decoration: none;
     color: black;
     font-size: 22px;
     /*font-weight: 800;
@@ -63,7 +62,6 @@ nav ul li a {
 nav ul li a:hover{
     transition: .9s;
     color:  #5e5656;
-    text-decoration: none;
     } 
     .menu ul li a:after{
         content: '';
@@ -96,12 +94,18 @@ nav ul li a:hover{
           left: -10%;
         }
       } 
+
       .activeStyle{
       
         text-decoration: none;
       }
+      .active{
+        color: #5e5656;
+
+      }
            
-   
+
+
     
     @media(max-width: 786px) {
     
