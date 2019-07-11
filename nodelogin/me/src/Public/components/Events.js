@@ -2,7 +2,7 @@ import React from 'react';
 import './Events.css';
 import Fade from 'react-reveal/Fade';
 import Footer from './footer';
-//import Header from './header';
+import Header from './header';
 
 class Events extends React.Component {
   constructor (props) {
@@ -29,7 +29,7 @@ class Events extends React.Component {
   render () {
     return (
       <div>
-{/* <Header/> */}
+<Header/>
         {this.state.events && this.state.events.map ((event, index) => (
           
             <div key={index}>

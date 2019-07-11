@@ -26,7 +26,7 @@ const TableBody = props => {
                 <td>{row.description}</td>
                 <td>{row.date}</td>
                 <td><img src={`http://localhost:4000/${row.image_path}`}style={{width:"200px"}} /></td>
-                <td><button onClick={props.removeEvent(row.id)}>Delete</button> </td>
+                <td><button>Delete</button> </td>
             </tr>
         );
     });

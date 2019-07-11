@@ -1,169 +1,119 @@
-import React,{Component} from "react";
-//import Header from "./header";
-//import { isTemplateLiteral } from "@babel/types";
-//import MusicPlayer from 'react-responsive-music-player';
-//import SearchExample from "./search"
-//import ReactAudioPlayer from 'react-audio-player';
-// "./music.css";
+import React from "react";
+import Header from "./header";
+import Fade from 'react-reveal/Fade';
+import './Events.css';
+import Footer from './footer';
+//import Slider from "react-slick";
+//import "slick-carousel/slick/slick.css";
+//import "slick-carousel/slick/slick-theme.css";
+import "./gallery.css"
+/* import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import Lightbox from "react-image-lightbox"; */
+//import "./Lightbox.css";
 
-// const movies =  [
-//   { title: "X", url: 'http://localhost:3000/events/1.mp3'},
-//   { title: "XX", url:'http://localhost:3000/events/2.mp3'},
-//   { title: "XXX", url:'http://localhost:3000/events/3.mp3'},
-
-
-// ]
-
-
-const movies = [
-  {
-    title: 'Mad Max: Fury Road',
-    para : 'Music1',
-    poster: 'http://localhost:3000/events/1.mp3'
-  },
-  {
-    title: 'The Hunger Games: Mockingjay Part 1',
-    para : 'Music2',
-    poster: 'http://localhost:3000/events/1.mp3'
-  },
-  {
-    title: 'Jurassic World',
-    para : 'Music3',
-    poster: 'http://localhost:3000/events/1.mp3'
-  },
-  {
-    title: 'Everest',
-    para : 'Music4',
-    poster: 'http://localhost:3000/events/1.mp3'
-  },
-  {
-    title: 'Insurgent',
-    para : 'Music5',
-     poster: 'http://localhost:3000/events/1.mp3'
-  },
-  {
-    title: 'Sicario',
-    para : 'Music6',
-     poster: 'http://localhost:3000/events/1.mp3'
-  }
-];
-const Movie = (prop) => (
-  <div>
-    <div>
-     <p> {prop.movie.para}</p>
-     <audio controls src={prop.movie.poster} type="audio/mpeg"/>
-    </div>
-    <div class="music-player-container is-playing">
-
-<div class="music-player">
-  <div class="player-content-container">
-    <h1 class="artist-name">Incubus</h1>
-    <h2 class="album-title">Make Yourself</h2>
-    <h3 class="song-title">"Stellar"</h3>
-    <div class="music-player-controls">
-      <div class="control-back"></div>
-      <div class="control-play"></div>
-      <div class="control-forwards"></div>
-    </div>
-  </div></div>
-<div class="album">
-  <div class="album-art"></div>
-  <div class="vinyl"></div>
-</div>
-
-</div>
-</div>
-);
+// import Img1 from "./img/1.jpg"
+// import Img2 from "./img/2.jpg"
+// import Img3 from "./img/3.jpg"
+// import Img4 from "./img/4.jpg"
 
 
 
-class Form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.updateSearch = this.updateSearch.bind(this);
-  }
-  updateSearch(newSearch) {
-    this.props.updateSearch(newSearch)
-  }
-
-  render() {
-    return(
-      <div>
-        <div id="search-input">
-          <input type="search" 
-            placeholder="Find Music..."
-            value={this.props.search} 
-            onChange={this.updateSearch}
-          />
-          <i className="fa fa-search"></i>
-        </div>
-        
-      </div>
-    )
-  }
-}
 
 
-class Main extends React.Component {
-  constructor(props) {
-    super(props);
-    this.updateSearch = this.updateSearch.bind(this);
-    this.state = {
-      search: ''
-    };    
-  }
-  
-  updateSearch(e) {
-    e.preventDefault();
-    this.setState({
-      search: e.target.value
-    })
-  }
-  
-
-  
-  render() {
-    const { search } = this.state;
-    return(
-      <main>
-        
-        <Form search={search} updateSearch={this.updateSearch}/>
-        
-        <section id="movies">
-          {
-            this.props.movies
-              .filter(movie => movie.title.toLowerCase()
-              .includes(search.toLowerCase()))
-              .map(movie => <Movie movie={movie}/>)
-          }
-        </section>
+//       class Gallery extends React.Component {
+//   render() {
+//     var settings = {
+//       dots: true,
+//       infinite: true,
+//       speed: 300,
+//       arrows: false,
+//       autoplay:true,
+//       slidesToShow: 2,
+//       cssEase: 'linear',
+//       fade: true,
+//       slidesToScroll: 1
+//     };
+//     return (
       
-      </main>
-    )
-  }
-}
+//         <div>
+// <Header/>
+//      <div>
+//        <h2>SOME OF OUR IMAGES</h2>
+//        </div>
+      
+     
+    
+     
+//       <div>
+      
+//       <Slider className="slider" {...settings}>
+       
+    
+//         <div>
+//            <img className="slide_img" src={Img1} />
+//         </div>
+//         <div>
+//         <img className="slide_img" src={Img2} /> 
+//         </div>
+//         <div>
+//         <img className="slide_img" src={Img3} />
+//         </div>
+//         <div>
+//         <img className="slide_img" src={Img4} />
+     
+//         </div>
+        
+//       </Slider>
+//       </div>
+    
+//       </div>
+//     );
+//   }
+// }
 
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-     this.state = {
-       movies: movies
-     }
+class Music extends React.Component {
+  constructor (props) {
+    super (props);
+    this.state = {
+      name: '',
+      
+      song: '',
+    };
   }
-  render() {
-    const {movies} = this.state;
-    return(
+  async componentDidMount (e) {
+    console.log ('hi');
+    try {
+      const data = await fetch ('http://localhost:4000/music');
+      const response = await data.json ();
+      console.log ('hi', response);
+      this.setState ({music: response});
+      console.log (this.state.events);
+    } catch (err) {
+      console.log (err);
+    }
+  }
+
+  render () {
+    return (
       <div>
-      {/* <Header/> */}
-      <Main movies={movies}/>
+<Header/>
+        {this.state.music&& this.state.music.map ((event, index) => (
+          
+            <div key={index}>
+              <div className="events">
+              <h3 className="event_title">{event.song_name}</h3>
+              <audio controls src={`http://localhost:4000/${event.song_path}`} 
+              type="audio/mpeg"/>
+
+               
+              </div>
+            </div>
+        
+        ))} 
+
+        <Footer />
       </div>
-    )
+    );
   }
 }
-
-
-
-
-
-export default App;
+export default Music;

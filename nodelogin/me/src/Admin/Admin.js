@@ -20,7 +20,7 @@ class Admin extends Component {
             const response = await data.json();
             console.log('hi',response)
             this.setState({events:response });
-                            console.log(this.state.events[15].title)
+                            
         }
       catch(err){
           console.log(err)
