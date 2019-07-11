@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+//import Header from "./header";
 import Fade from 'react-reveal/Fade';
 import './Events.css';
 import Footer from './footer';
@@ -96,7 +96,7 @@ class Gallery extends React.Component {
   render () {
     return (
       <div>
-<Header/>
+{/* <Header/> */}
         {this.state.gallary_img&& this.state.gallary_img.map ((event, index) => (
           
             <div key={index}>
