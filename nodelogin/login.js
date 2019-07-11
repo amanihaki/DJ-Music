@@ -118,6 +118,27 @@ app.get ('/event', function (request, response) {
     } else {
       /* 	response.sendFile('control.html', {root: __dirname });  */
       response.send (row);
+      /* response.send(row); */
+      /* 	console.log("it's me stupid response",response); */
+    }
+
+    /* else {
+					response.send('Please login to view this page!');
+				}
+				  */
+  });
+}
+);
+
+app.get ('/gallery', function (request, response) {
+ 
+  let event_sql = 'SELECT * FROM event_gallary WHERE `usage(E,G,B)`="G"';
+  db.all (event_sql, function (error, row) {
+    if (error) {
+      response.send (error.message);
+    } else {
+      /* 	response.sendFile('control.html', {root: __dirname });  */
+      response.send (row);
 
       /* response.send(row); */
       /* 	console.log("it's me stupid response",response); */
@@ -131,7 +152,10 @@ app.get ('/event', function (request, response) {
 }
 );
 
-app.get ('/gallery', function (requests, response) {
+
+
+
+/* app.get ('/gallery', function (requests, response) {
 
 	
   let event_sql = 'SELECT * FROM event_gallary WHERE `usage(E,G,B)`="G"';
@@ -142,13 +166,13 @@ app.get ('/gallery', function (requests, response) {
     } else {
       response.send (row);
       console.log (row);
-      /* 	row.forEach(row => console.log(row.title, row.description)); */
+      /* 	row.forEach(row => console.log(row.title, row.description)); 
     }
   });
 });
 
 
-
+ */
 
 //queries for the database
 app.post ('/insert', upload.single ('selectedFile'), function (
@@ -159,27 +183,16 @@ app.post ('/insert', upload.single ('selectedFile'), function (
   const description = requests.body.description;
   const date = requests.body.date;
   const file_N = requests.file.filename;
-  console.log (date);
-  console.log (title);
-  console.log (description);
-  console.log (file_N);
-
-  /* 	upload(requests, response, function (err) {
-	if (err instanceof multer.MulterError) {
-		 console.log("here",err);
-		return response.status(500).json(err)
-	}/*  else if (err) {
-		return response.status(500).json(err)
-	} */
-  /* 	else{
-		return response.status(200).send(requests.file)}
-	})  */
-  /* 	const file_N=requests.file; */
+  console.log ('Insert ', date);
+  console.log ('Insert ', title);
+  console.log ('Insert ', description);
+  console.log ('Insert ', file_N);
 
   if (!file_N) {
     console.log ('upload image please ');
     console.log (title, description);
   } else {
+    console.log('Run query');
     let event_sql =
       'INSERT INTO event_gallary (title,description, image_path, date, `usage(E,G,B)`) VALUES (?, ?, ?, ?,?)';
 
@@ -202,15 +215,19 @@ app.post ('/insert', upload.single ('selectedFile'), function (
 
 app.post ('/delete', function (requests, response) {
 
-	var id=requests.body.index
-  let event_sql = 'DELETE FROM event_gallary WHERE id = ?';
-  db.exec(event_sql, [ id ], function (error, row) {
+  var id=requests.body.index
+  console.log("helllllooooooo",id);
+  let delete_sql = 'DELETE FROM event_gallary WHERE id = ?';
+  db.run (delete_sql, [ id ], function (error, row) {
     if (error) {
       response.send ('Please login to view this page!');
-      return console.error (error.message);
+      return console.error ('heeell',error.message);
+       
     } else {
       response.send (row);
-      console.log (row);
+      console.log ('hellooo row',row);
+      console.log('Helllooo id',id );
+      // db.close();
       /* 	row.forEach(row => console.log(row.title, row.description)); */
     }
   });
