@@ -11,7 +11,7 @@ class App extends Component {
             <Router>
             <div>
               <Route path="/admin" component={Control} />
-              <Route path="/"  component={Public} />
+              <Route path="/" component={Public} />
 
               {/* <Route path="/events" component={Admin}/> */}
              

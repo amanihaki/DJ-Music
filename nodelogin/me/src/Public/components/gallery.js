@@ -32,11 +32,11 @@ class Gallery extends React.Component {
         {this.state.gallary_img&& this.state.gallary_img.map ((event, index) => (
           
             <div key={index}>
-              <div className="events">
+              <div className="events" style={{ marginTop:"-400px"}}>
                 <img
                   className="imgE1"
                   src={`http://localhost:4000/${event.image_path}`}
-                  alt="mee" style={{width:"300px"}}
+                  alt="mee" style={{width:"700px",}}
                 />
 
             

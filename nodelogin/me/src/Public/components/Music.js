@@ -1,118 +1,148 @@
-import React from "react";
-import Fade from 'react-reveal/Fade';
-import './Events.css';
-import Footer from './footer';
-//import Slider from "react-slick";
-//import "slick-carousel/slick/slick.css";
-//import "slick-carousel/slick/slick-theme.css";
-import "./gallery.css"
-/* import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import Lightbox from "react-image-lightbox"; */
-//import "./Lightbox.css";
+import React,{Component} from "react";
 
-// import Img1 from "./img/1.jpg"
-// import Img2 from "./img/2.jpg"
-// import Img3 from "./img/3.jpg"
-// import Img4 from "./img/4.jpg"
+import music from "./img/music.jpg" 
 
+//import { isTemplateLiteral } from "@babel/types";
+//import MusicPlayer from 'react-responsive-music-player';
+//import SearchExample from "./search"
+//import ReactAudioPlayer from 'react-audio-player';
+import"./music.css";
 
-
-
-
-//       class Gallery extends React.Component {
-//   render() {
-//     var settings = {
-//       dots: true,
-//       infinite: true,
-//       speed: 300,
-//       arrows: false,
-//       autoplay:true,
-//       slidesToShow: 2,
-//       cssEase: 'linear',
-//       fade: true,
-//       slidesToScroll: 1
-//     };
-//     return (
-      
-//         <div>
-// <Header/>
-//      <div>
-//        <h2>SOME OF OUR IMAGES</h2>
-//        </div>
-      
-     
-    
-     
-//       <div>
-      
-//       <Slider className="slider" {...settings}>
-       
-    
-//         <div>
-//            <img className="slide_img" src={Img1} />
-//         </div>
-//         <div>
-//         <img className="slide_img" src={Img2} /> 
-//         </div>
-//         <div>
-//         <img className="slide_img" src={Img3} />
-//         </div>
-//         <div>
-//         <img className="slide_img" src={Img4} />
-     
-//         </div>
-        
-//       </Slider>
-//       </div>
-    
-//       </div>
-//     );
-//   }
-// }
-
-class Music extends React.Component {
-  constructor (props) {
-    super (props);
-    this.state = {
-      name: '',
-      
-      song: '',
-    };
+// const movies =  [
+//   { title: "X", url: 'http://localhost:3000/events/1.mp3'},
+//   { title: "XX", url:'http://localhost:3000/events/2.mp3'},
+//   { title: "XXX", url:'http://localhost:3000/events/3.mp3'},
+const movies = [
+  {
+    title: 'Thunder',
+    para : 'Thunder',
+    poster: 'http://localhost:3000/events/1.mp3'
+  },
+  {
+    title: 'Call me up',
+    para : 'Call me up',
+    poster: 'http://localhost:3000/events/1.mp3'
+  },
+  {
+    title: 'Sun & moon',
+    para : 'Sun & moon',
+    poster: 'http://localhost:3000/events/1.mp3'
+  },
+  {
+    title: 'only road',
+    para : 'only road',
+    poster: 'http://localhost:3000/events/1.mp3'
+  },
+  {
+    title: 'Vision',
+    para : 'Vision',
+     poster: 'http://localhost:3000/events/1.mp3'
+  },
+  {
+    title: 'Boom',
+    para : 'Boom',
+     poster: 'http://localhost:3000/events/1.mp3'
   }
-  async componentDidMount (e) {
-    console.log ('hi');
-    try {
-      const data = await fetch ('http://localhost:4000/music');
-      const response = await data.json ();
-      console.log ('hi', response);
-      this.setState ({music: response});
-      console.log (this.state.events);
-    } catch (err) {
-      console.log (err);
-    }
+];
+const Movie = (prop) => (
+  <div>
+    <div >
+     <p> {prop.movie.para}</p> <audio className="control-audio" controls src={prop.movie.poster} type="audio/mpeg"/>
+    </div>
+    
+</div>
+);
+
+
+
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.updateSearch = this.updateSearch.bind(this);
+  }
+  updateSearch=(newSearch)=> {
+    this.props.updateSearch(newSearch)
   }
 
-  render () {
-    return (
-      <div>
-
-        {this.state.music&& this.state.music.map ((event, index) => (
-          
-            <div key={index}>
-              <div className="events">
-              <h3 className="event_title">{event.song_name}</h3>
-              <audio controls src={`http://localhost:4000/${event.song_path}`} 
-              type="audio/mpeg"/>
-
-               
-              </div>
-            </div>
+  render() {
+    return(
+      <div  >
+        <div  id="search-input">
+          <input id="search_bar" type="search" 
+            placeholder="Find Music..."
+            value={this.props.search} 
+            onChange={this.updateSearch}
+          />
+          {/* <i className="fa fa-search"></i> */}
+        </div>
+      
         
-        ))} 
-
-        <Footer />
       </div>
-    );
+    )
   }
 }
-export default Music;
+
+
+class Main extends React.Component {
+  constructor(props) {
+    super(props);
+    this.updateSearch = this.updateSearch.bind(this);
+    this.state = {
+      search: ''
+    };    
+  }
+  
+  updateSearch(e) {
+    e.preventDefault();
+    this.setState({
+      search: e.target.value
+    })
+  }
+  
+
+  
+  render() {
+    const { search } = this.state;
+    return(
+      <main class="music_container">
+     
+        <Form search={search} updateSearch={this.updateSearch}/>
+        
+        <section id="movies">
+          {
+            this.props.movies
+              .filter(movie => movie.title.toLowerCase()
+              .includes(search.toLowerCase()))
+              .map(movie => <Movie movie={movie}/>)
+          }
+        </section>
+      
+      </main>
+    )
+  }
+}
+
+
+class Musican extends React.Component {
+  constructor(props) {
+    super(props);
+     this.state = {
+       movies: movies
+     }
+  }
+  render() {
+    const {movies} = this.state;
+    return(
+      <div>
+         <img className="img_music" src={music}/>
+      <Main movies={movies}/>
+      </div>
+    )
+  }
+}
+
+
+
+
+
+export default Musican;
