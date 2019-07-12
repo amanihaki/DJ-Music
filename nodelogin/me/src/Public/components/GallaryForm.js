@@ -124,7 +124,7 @@ class GallaryForm extends Component {
                     type="file"
               
                     name='file'
-                    onClick={this.onChangeHandler}  />
+                    onChange={this.onChangeHandler}  />
 
 
                      <button type="submit" onClick={this.onGalaryFormSubmit}>

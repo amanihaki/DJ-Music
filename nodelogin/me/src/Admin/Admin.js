@@ -26,8 +26,16 @@ class Admin extends Component {
           console.log(err)
       }
     }
-    handleSubmit = event => {
-        this.setState({events: [...this.state.events, event]});
+    handleSubmit = async event => { try{
+        const data = await fetch('http://localhost:4000/event')
+        const response = await data.json();
+        console.log('hi',response)
+        this.setState({events:response });
+                        
+    }
+  catch(err){
+      console.log(err)
+  }
     }
 
     render() {

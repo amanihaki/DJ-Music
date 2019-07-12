@@ -229,7 +229,7 @@ app.post ('/insert', upload.single ('selectedFile'), function (
         response.send ('Please login to view this page!');
         return console.error ('here', error.message);
       } else {
-        response.send ('data inserted into database');
+        response.json ('data inserted into database');
         console.log (this);
         // row.forEach(row => console.log(row.title, row.description));
       }

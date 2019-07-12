@@ -95,7 +95,8 @@ class Form extends Component {
       config:{ headers:{'Content-Type':'multipart/form-data'}}
        })
         .then(res => { // then print response status
-            console.log(res.statusText);
+            console.log(res);
+            this.props.handleSubmit(res.data)
             
         })
         
