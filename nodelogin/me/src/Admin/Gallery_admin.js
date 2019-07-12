@@ -47,12 +47,3 @@ class Gallery extends React.Component {
 }
 
 export default withRouter (Gallery);
-
-/* import React, { Component } from 'react';
-import Table from '../Table';
-import Form from '../Form';
-import Axios from 'axios';
-
-class Admin extends Component {
-  
-export default Admin; */

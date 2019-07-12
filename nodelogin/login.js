@@ -180,7 +180,6 @@ app.get ('/music', function (request, response) {
 );
 
 /* app.get ('/gallery', function (requests, response) {
-
 	
   let event_sql = 'SELECT * FROM event_gallary WHERE `usage(E,G,B)`="G"';
   db.all (event_sql, [], function (error, row) {
@@ -194,8 +193,6 @@ app.get ('/music', function (request, response) {
     }
   });
 });
-
-
  */
 
 //queries for the database

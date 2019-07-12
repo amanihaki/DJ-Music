@@ -4,11 +4,11 @@ const TableHeader = () => {
     return (
         <thead>
             <tr>
-                <th>title</th>
-                <th>description</th>
-                <th>image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
                 
-                <th>control</th>
+                <th>Control</th>
             </tr>
         </thead>
     );
