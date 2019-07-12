@@ -1,14 +1,28 @@
-
-.footer{
-    height: 100px;
+/* .footer{
+    height: 100px;} */
+.foot {
+    height: 110px;
     background-color: black;
     width: 100%;
     bottom: 0px;
     color: whitesmoke;
    padding-top: 5px;
-   
-   
+
+
 } 
+   
+
 span{
     color: #5e5656;
 } 
+ h4 {
+    color: whitesmoke;
+     font-size: 16px;
+     margin-top: 18px;
+}  
+ h5 {
+
+    font-size: 13px;
+     margin-top: 20px;
+     color: whitesmoke;
+}  

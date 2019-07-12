@@ -62,6 +62,7 @@ nav ul li a {
 nav ul li a:hover{
     transition: .9s;
     color:  #5e5656;
+    text-decoration: none;
     } 
     .menu ul li a:after{
         content: '';
@@ -117,11 +118,11 @@ nav ul li a:hover{
     
         nav ul {
               max-height: 0px;
-              background: rgba(0,0,0,0.5);
+              background: whitesmoke;
         }
     
         nav.black ul {
-              background: rgba(0,0,0,0.5);
+          background: whitesmoke;
         }
     
         .showing {

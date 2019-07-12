@@ -1,5 +1,4 @@
 import React from 'react';
-//import Header from './Header_admin';
 import {withRouter} from "react-router";
 
 
@@ -7,7 +6,9 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <p>this is  k jjjjjjjjjnjnjnjllnj home page</p>
+                <div className="comtrol_panel">
+        <h3 className="h_control"> Control Panel</h3> 
+        </div>
             </div>
         )
     }

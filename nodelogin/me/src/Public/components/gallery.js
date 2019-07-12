@@ -1,6 +1,4 @@
 import React from "react";
-import Header from "./header";
-import Fade from 'react-reveal/Fade';
 import './Events.css';
 import Footer from './footer';
 import "./gallery.css"
@@ -30,7 +28,7 @@ class Gallery extends React.Component {
   render () {
     return (
       <div>
-<Header/>
+
         {this.state.gallary_img&& this.state.gallary_img.map ((event, index) => (
           
             <div key={index}>
@@ -41,12 +39,12 @@ class Gallery extends React.Component {
                   alt="mee" style={{width:"300px"}}
                 />
 
-                <Fade left cascade>
+            
                   <div id="pE4">
                     <h3 className="event_title">{event.title}</h3>
                     <p className="paragraph"> {event.description}</p>
                   </div>
-                </Fade>
+                
               </div>
             </div>
         

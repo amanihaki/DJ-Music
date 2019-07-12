@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./header";
 import Fade from 'react-reveal/Fade';
 import './Events.css';
 import Footer from './footer';
@@ -96,7 +95,7 @@ class Music extends React.Component {
   render () {
     return (
       <div>
-<Header/>
+
         {this.state.music&& this.state.music.map ((event, index) => (
           
             <div key={index}>

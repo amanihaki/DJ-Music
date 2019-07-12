@@ -6,7 +6,8 @@ import "./footer.css";
 class Footer extends Component{
     render(){
         return(
-      <div className="footer">
+    <div className="footer">
+      <div className="foot">
           <footer>
               <h4>© Copyright ©2019 </h4>
             {/* <h4>SoundCloud<span>/</span>CopanyName</h4> */}
@@ -17,6 +18,7 @@ class Footer extends Component{
              
              
           </footer>
+      </div>
       </div>
                   )}
                 }; 

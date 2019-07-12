@@ -27,3 +27,27 @@
     font-weight: bold;
     color: #ffffff;
 }
+.header_admin{
+    height: 90px;
+    background-color: blue;
+}
+#web{
+    float:left;
+}
+
+.comtrol_panel{
+    height: 300px;
+    width:500px;
+    margin: 70px auto;
+    background: linear-gradient(40deg,#45cafc,#303f9f);
+    border-radius: 10%;
+    box-shadow: 0 4px 13px 0 rgba(0,0,0,.16),
+                0 4px 13px 0 rgba(0,0,0,.12);
+}
+.h_control{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    padding-top:120px;
+    color:black;
+}

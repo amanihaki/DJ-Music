@@ -27,9 +27,7 @@ var upload = multer ({storage: storage});
 let db = new sqlite3.Database (
 
 
-  
-
-  '/home/myuser/Desktop/backend/nodelogin/nodelogin.db',
+  './nodelogin.db',
   
 
   err => {

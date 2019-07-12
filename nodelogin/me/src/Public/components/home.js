@@ -2,7 +2,7 @@ import React, { Component} from "react";
 import Icon from "./icons"
 import Footer from "./footer";
 import Image from "./img/dj.jpg"
-import Header from "./header"
+//import Header from "./header"
 /*import "./armada.css";*/
 
 
@@ -15,7 +15,7 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <Header/>
+            
                <div className="title" >
                      <h1 >DOUG MARSHALL</h1>
                      <h6>
