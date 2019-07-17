@@ -2,6 +2,7 @@ import React from "react";
 import './Events.css';
 import Footer from './footer';
 import "./gallery.css"
+import Header from "./header"
 
 class Gallery extends React.Component {
   constructor (props) {
@@ -28,7 +29,7 @@ class Gallery extends React.Component {
   render () {
     return (
       <div>
-
+           <Header/>
         {this.state.gallary_img&& this.state.gallary_img.map ((event, index) => (
           
             <div key={index}>

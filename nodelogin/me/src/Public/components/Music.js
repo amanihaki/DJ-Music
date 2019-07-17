@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-
+import Header from "./header"
 import music from "./img/music.jpg" 
 
 //import { isTemplateLiteral } from "@babel/types";
@@ -134,6 +134,7 @@ class Musican extends React.Component {
     const {movies} = this.state;
     return(
       <div>
+        <Header/>
          <img className="img_music" src={music}/>
       <Main movies={movies}/>
       </div>

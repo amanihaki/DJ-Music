@@ -4,7 +4,7 @@ import MusicForm from '../Public/components/MusicForm';
 import Axios from 'axios';
 
 
-class Music extends React.Component {
+class Musicani extends React.Component {
     state = {
         events: []
     };
@@ -49,4 +49,4 @@ class Music extends React.Component {
         );
     }
 }
-export default Music;
+export default Musicani;

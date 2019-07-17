@@ -1,4 +1,4 @@
-.login-form {
+ .login-form {
     width: 300px;
     margin: 0 auto;
     font-family: Tahoma, Geneva, sans-serif;
@@ -29,7 +29,7 @@
 }
 .header_admin{
     height: 90px;
-    background-color: blue;
+    background-color: rgb(190, 90, 83);
 }
 #web{
     float:left;
@@ -39,7 +39,7 @@
     height: 300px;
     width:500px;
     margin: 70px auto;
-    background: linear-gradient(40deg,#45cafc,#303f9f);
+    background: linear-gradient(40deg,#c96e62,#db3232);
     border-radius: 10%;
     box-shadow: 0 4px 13px 0 rgba(0,0,0,.16),
                 0 4px 13px 0 rgba(0,0,0,.12);
@@ -50,4 +50,4 @@
     font-weight: 400;
     padding-top:120px;
     color:black;
-}
+} 

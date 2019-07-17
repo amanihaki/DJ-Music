@@ -5,7 +5,7 @@ import Gallery from "./components/gallery";
 import Contact from "./components/Contact";
 import Events from "./components/Events";
 import Musican from "./components/Music";
-import Header from "./components/header";
+// import Header from "./components/header";
 
 
 
@@ -14,8 +14,8 @@ function PublicApp() {
     return (
 
         <Router>
-            <div>
-                <Header />
+             <div>
+               {/* <Header />  */}
             
                 <Route path='/' exact component={Home} />
                 <Route path='/gallery' component={Gallery} />

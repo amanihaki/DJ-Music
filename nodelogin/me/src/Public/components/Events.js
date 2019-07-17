@@ -2,6 +2,7 @@ import React from 'react';
 import './Events.css';
 import Fade from 'react-reveal/Fade';
 import Footer from './footer';
+import Header from './header';
 
 
 class Events extends React.Component {
@@ -28,13 +29,16 @@ class Events extends React.Component {
 
   render () {
     return (
-      <div className="content1">
-
+      <div >
+               <Header/>
+           <div className="content1">
         {this.state.events && this.state.events.map ((event, index) => (
           
             <div key={index}>
-            <div>
+            
+           
               <div className="events" >
+             
                 <img
                   className="imgE1"
                   src={`http://localhost:4000/${event.image_path}`}
@@ -48,12 +52,12 @@ class Events extends React.Component {
                     <p className="paragraph"> {event.description}</p>
                   </div>
                 </Fade>
+              
               </div>
             </div>
-            </div>
-        
+     
         ))} 
-
+         </div>
         <Footer />
       </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './Header_admin';
 import {withRouter} from 'react-router';
 import Table from '../Table';
 import GallaryForm from '../Public/components/GallaryForm';
